@@ -1,0 +1,126 @@
+<head>
+<title>INVENTORI GUDANG APOTEK BERKAH JAYA</title>
+</head>
+<template name="home">
+	<div id="wrapper">
+		<div id="page-wrapper">
+			
+			<div class="container">
+				
+				<!-- Page Heading-->
+				<div class="row">
+					<div class="col-lg-12">
+						<h1 class="page-header">
+							INVENTORI GUDANG APOTEK
+						</h1>
+						<ol class="breadcrumb">
+							<li class="active">
+								<i class="fa fa-dashboard"></i> Dashboard
+							</li>
+							<li class="active">Data</li>
+
+						</ol>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-lg-5">
+						<form role="form" class="form-horizontal">
+						<div class="form-group">
+									<label class="control-label col-sm-3" for="idOBAT">ID OBAT <span style="color:red">*</span></label>
+									<div class="col-sm-9">
+										<input type="text" value="{{idobat}}" name="idobat" id="idobat" class="form-control input-sm" placeholder="ID Obat">
+									</div>
+
+								</div>
+
+							<div class="form-group">
+								<label class="control-label col-sm-3" for="title">NAMA OBAT <span style="color:red">*</span></label>
+								<div class="col-sm-9">
+									<input type="text" value="{{namaobat}}" name="namaobat" id="namaobat" class="form-control input-sm" placeholder="NAMA OBAT" >
+								</div>
+
+								</div>
+								<div class="form-group">
+								<label class="control-label col-sm-3" for="stok">STOK  <span style="color:red">*</span></label>
+								<div class="col-sm-9">
+									<input type="text" value="{{stok}}" name="stok" id="stok" class="form-control input-sm" placeholder="STOK OBAT">
+								</div>
+
+								</div>
+
+								<div class="form-group">
+								<label class="control-label col-sm-3" for="jenis">JENIS OBAT <span style="color:red">*</span></label>
+								<div class="col-sm-9">
+								<select class="form-control" name="jenis_obat" id="jenis_obat" value="{{jenis}}">
+								     <option value="">Pilihan</option>
+								     <option value="Tablet" >Tablet</option>
+								     <option value="Sirup" >Sirup</option>
+								     <option value="Alkes">Alkes</option>
+								     <option value="Flash">Flash</option>
+								</select>
+								</div>
+
+								</div>
+
+								<div class="form-group">
+								<label class="control-label col-sm-3" for="harga">HARGA OBAT<span style="color:red">*</span></label>
+								<div class="col-sm-9">
+									<input type="text" value="{{harga}}" name="harga" id="harga" class="form-control input-sm" placeholder="HARGA OBAT">
+								</div>
+
+								</div>
+
+								<div class="form-group">
+									<label class="control-label col-sm-3" for="description">DESKRIPSI OBAT<span style="color:red">*</span></label>
+									<div class="col-sm-9">
+										<textarea name="description" class="form-control"> {{description}}
+										</textarea>
+									</div>
+
+								</div>
+							<div class="form-group">
+								<div class="col-sm-offset-3 col-sm-4">
+									<input type="submit"  value="Add" id="btnAdd" class="btn btn-primary btn-block">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-lg-7">
+						<div class="table-responsive">
+							<table class="table table-bordered table-hover table-striped">
+								<thead>
+									<tr>
+										<th class="text-center" style="width:40%">ID Obat</th>
+										<th class="text-center" style="width:40%">Nama Obat</th>
+										<th class="text-center" style="width:40%">Stok Obat</th>
+										<th class="text-center" style="width:40%">Jenis Obat</th>
+										<th class="text-center" style="width:40%">Harga Obat</th>
+										<th class="text-center" style="width:40%">Description</th>
+
+										<th class="text-center" style="width:10%" colspan="2">Tools</th>
+									</tr>
+								</thead>
+								<tbody>
+								{{#each getData}}
+								<tr>
+									<td>{{idobat}}</td>
+									<td>{{namaobat}}</td>
+									<td>{{stok}}</td>
+									<td>{{jenis}}</td>
+									<td>{{harga}}</td>
+									<td>{{description}}</td>
+									<td><a id="remove" href="#">Delete</a>|<a href="/update/{{_id}}">Edit</a></td>
+									</tr>
+									{{/each}}
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.container-fluid -->
+
+		</div>
+		<!-- /#page-wrapper -->
+	
+	</div>
+</template>
